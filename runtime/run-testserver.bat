@@ -1,3 +1,43 @@
+@echo off
 :: Test Server Runtime for GearBird project
 
-@echo off
+:: Read server.conf
+for /f "tokens=1,2 delims==" %%a in (server.conf) do (
+    if %%a==server set %%a=%%b
+    if %%a==server-path set %%a=%%b
+    if %%a==bindto set %%a=%%b
+    if %%a==port set %%a=%%b
+    if %%a==cli-options set %%a=%%b
+)
+
+:: Decide what server to host
+if "%server%"=="php-developer" goto hostphp
+if "%server%"=="python-http" goto hostpython
+goto invalidserver
+
+
+:: PHP Server Hosting
+:hostphp
+%server-path% -S %bindto%:%port% %cli-options%
+goto serverfinish
+
+:: Python Server Hosting
+:hostpython
+%server-path% -m http.server -b %bindto% %port%
+goto serverfinish
+
+
+:: If invalid server is selected
+echo Server type "%server%" is invalid!
+echo Valid options are: "php-developer", "python-http".
+echo.
+echo Please choose a valid option and try again.
+goto EOF
+
+
+:: Server finished/exited
+:serverfinish
+echo Server finished/exited
+goto EOF
+
+:EOF
