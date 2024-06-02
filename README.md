@@ -1,5 +1,5 @@
-# The GearBird Framework
-GearBird can be your fullstack framework for building Web UIs in the Windows Batch scripting language.
+# The WingBird Framework
+WingBird can be your fullstack framework for building Web UIs in the Windows Batch scripting language.
 
 The beauty of Batch, is that **you can call other Batch files in a Batch file, creating a file-based component structure**, similar to React's function- or class-based component structure.
 
@@ -22,7 +22,7 @@ There is a file named `gb.bat` in the root directory of your project. You can us
 
 ## Available commands
 ### Displaying the current version of the command line
-To display the current version of the GearBird CLI, use this command
+To display the current version of the WingBird CLI, use this command
 ```
 gb version
 ```
@@ -42,7 +42,7 @@ gb run-dev
 This will compile and then host your server files by either using `python3` and `http.server` or by using `PHP`'s built in development server.
 
 # Get started
-Before we get started building web applications with this GearBird, here is a quick explanation of what is going on inside the provided example file `index.bat`
+Before we get started building web applications with this WingBird, here is a quick explanation of what is going on inside the provided example file `index.bat`
 
 Here is how the file looks like in the beginning:
 ```bat
