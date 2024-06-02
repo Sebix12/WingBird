@@ -1,0 +1,1 @@
+echo ^<h2^>%*^<^/h2^> >>..\..\compilation.temp

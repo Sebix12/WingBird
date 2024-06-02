@@ -1,0 +1,1 @@
+echo ^<script src^="%*"^>^<^/script^> >>..\..\compilation.temp
