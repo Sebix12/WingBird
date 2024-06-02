@@ -22,7 +22,7 @@ if exist compilation.temp del compilation.temp
 :: Get all files
 for /r %%f in (%source-dir%\*.bat) do (
     echo Compiling/Running %%~nxf . . .
-    %source-dir%\%%~nxf
+    call %source-dir%\%%~nxf
 )
 
 echo *** COMPILATION DONE ***
