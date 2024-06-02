@@ -1,6 +1,6 @@
 @echo off
+set component=%cd%\components
 cd commands\html
-set component=..\..\components
 
 call paragraph Hello World!
 
