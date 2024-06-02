@@ -1,0 +1,1 @@
+echo ^<^!DOCTYPE html^> >>..\..\compilation.temp

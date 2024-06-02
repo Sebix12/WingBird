@@ -1,0 +1,1 @@
+echo ^<^/body^> >>..\..\compilation.temp

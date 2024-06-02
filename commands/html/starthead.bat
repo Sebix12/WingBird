@@ -1,0 +1,1 @@
+echo ^<head^> >>..\..\compilation.temp

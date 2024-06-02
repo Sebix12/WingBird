@@ -1,0 +1,1 @@
+echo ^<title^>%*^<^/title^> >>..\..\compilation.temp
