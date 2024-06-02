@@ -1,0 +1,1 @@
+echo ^<link rel^="stylesheet" href^="%*"^> >>..\..\compilation.temp
