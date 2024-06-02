@@ -1,5 +1,7 @@
 @echo off
 :: Test Server Runtime for GearBird project
+echo GearBird Test/Developer Server Runtime
+echo.
 
 :: Read server.conf
 for /f "tokens=1,2 delims==" %%a in (server.conf) do (
@@ -9,6 +11,14 @@ for /f "tokens=1,2 delims==" %%a in (server.conf) do (
     if %%a==port set %%a=%%b
     if %%a==cli-options set %%a=%%b
 )
+
+echo Options selected:
+echo Server: %server%
+echo Server Path: %server-path%
+echo Bind Address: %bindto%
+echo Port: %port%
+echo CLI Options: %cli-options%
+echo.
 
 :: Decide what server to host
 if "%server%"=="php-developer" goto hostphp
