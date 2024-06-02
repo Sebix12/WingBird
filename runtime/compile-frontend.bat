@@ -15,6 +15,10 @@ echo Enable PHP: %enable-php%
 echo Source Directory: %source-dir%
 echo.
 
+:: Prep
+mkdir out
+if exist compilation.temp del compilation.temp
+
 :: Get all files
 for /r %%f in (%source-dir%\*.bat) do (
     echo Compiling/Running %%~nxf . . .
