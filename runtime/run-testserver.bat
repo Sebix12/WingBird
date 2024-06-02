@@ -20,6 +20,9 @@ echo Port: %port%
 echo CLI Options: %cli-options%
 echo.
 
+if not exist out\ goto notcompiled
+cd out
+
 :: Decide what server to host
 if "%server%"=="php-developer" goto hostphp
 if "%server%"=="python-http" goto hostpython
@@ -48,6 +51,12 @@ goto EOF
 :: Server finished/exited
 :serverfinish
 echo Server finished/exited
+goto EOF
+
+:: Out folder not found
+:notcompiled
+echo Application not compiled! (out dir not found)
+echo Compile your app with "gb compile"
 goto EOF
 
 :EOF
