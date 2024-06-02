@@ -18,26 +18,26 @@ The `runtime` directory holds the compiler script *(`compile-frontend.bat`)* and
 The `out` directory is created when the project gets compiled. It holds all the generated HTML, CSS, JavaScript and PHP files.
 
 # Using the command line
-There is a file named `gb.bat` in the root directory of your project. You can use this file to compile or run your project. To change compiler or server settings/configurations, edit the configuration files in the `runtime` directory.
+There is a file named `wb.bat` in the root directory of your project. You can use this file to compile or run your project. To change compiler or server settings/configurations, edit the configuration files in the `runtime` directory.
 
 ## Available commands
 ### Displaying the current version of the command line
 To display the current version of the WingBird CLI, use this command
 ```
-gb version
+wb version
 ```
 
 ### Compiling your project
 To compile your project, use this command:
 ```
-gb compile
+wb compile
 ```
 This will do all the steps mentioned in the "How the layout works" section.
 
 ### Running the project
 To run your project in your preferred/pre-set development server, use this command:
 ```
-gb run-dev
+wb run-dev
 ```
 This will compile and then host your server files by either using `python3` and `http.server` or by using `PHP`'s built in development server.
 
