@@ -82,3 +82,14 @@ The next line calls a component named `google-link`
 call %component%\google-link
 ```
 When we want to call a component, we need to prefix the component's name with `%component%\` to tell the batch file that we want to run a component instead of a tag.
+
+The last 2 lines:
+```bat
+:EOF
+call ..\endfile index.html
+```
+The first line is a goto label named `EOF`. This can be called anywhere in this file, and that skips to the end of the file and closes it.
+
+The second line closes the file. It tells the compiler that the file ended. It moves the `compilation.temp` file that is created by the tags into the out directory where it gets renamed into an **endfile name**.
+
+In this example, the `index.bat` file would get compiled into the file named `index.html`.
