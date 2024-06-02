@@ -40,3 +40,45 @@ To run your project in your preferred/pre-set development server, use this comma
 gb run-dev
 ```
 This will compile and then host your server files by either using `python3` and `http.server` or by using `PHP`'s built in development server.
+
+# Get started
+Before we get started building web applications with this GearBird, here is a quick explanation of what is going on inside the provided example file `index.bat`
+
+Here is how the file looks like in the beginning:
+```bat
+@echo off
+cd commands\html
+set component=..\..\components
+
+call paragraph Hello World!
+
+@REM Call google-link.bat in the source dir
+call %component%\google-link
+
+:EOF
+call ..\endfile index.html
+```
+
+After turning echo off, we can see that the file enters a directory called `commands\html`. This happens because every file in the `src` directory starts from the root directory of the project (except for components). With this line we can specify the filetype/the type of commands we are going to use. For example, if we want to create a CSS file, we use `coammnds\css`, for HTML we use `coammnds\html` and so on...
+
+Then we declare a variable named `component`. This makes it easier to call components. Using this, we don't have to type out `..\..\components\` every time we want to call a component.
+
+After that, we execute this:
+```bat
+call paragraph Hello World!
+```
+
+This calls the file `paragraph.bat`. When compiling this line turns into `<p>Hello World!</p>`.
+
+We can also create anchors/links using this method.
+```bat
+call link about.html Go to about page
+```
+This code creates an `<a>` tag that redirects users to the `about.html` page. **Note that we do not use `about.bat` when using links or referencing files basically anywhere in this framework.** Instead we use the "endfile name" of a file which we declare at the end of the file (will talk more about this later).
+
+The next line calls a component named `google-link`
+```bat
+@REM Call google-link.bat in the source dir
+call %component%\google-link
+```
+When we want to call a component, we need to prefix the component's name with `%component%\` to tell the batch file that we want to run a component instead of a tag.
