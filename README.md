@@ -17,6 +17,11 @@ The `runtime` directory holds the compiler script *(`compile-frontend.bat`)* and
 
 The `out` directory is created when the project gets compiled. It holds all the generated HTML, CSS, JavaScript and PHP files.
 
+# How the compiler works
+The compiler in this project is pretty simple and straightforward. When you run `wb compile`, a file named `compile-frontend.bat` starts up in the `runtime` directory.
+
+That file loops through the batch files in the source folder and executes them.
+
 # Using the command line
 There is a file named `wb.bat` in the root directory of your project. You can use this file to compile or run your project. To change compiler or server settings/configurations, edit the configuration files in the `runtime` directory.
 
@@ -43,6 +48,9 @@ This will compile and then host your server files by either using `python3` and 
 
 # Get started
 Before we get started building web applications with this WingBird, here is a quick explanation of what is going on inside the provided example file `index.bat`
+
+> [!WARNING]
+> This example is outdated. But the core concept remains the same.
 
 Here is how the file looks like in the beginning:
 ```bat
@@ -95,6 +103,34 @@ The second line closes the file. It tells the compiler that the file ended. It m
 In this example, the `index.bat` file would get compiled into the file named `index.html`.
 
 ## Using Batch as backend
-If you want to use a Batch Script as a backend instead of PHP, follow the instructions below.
+You can use Batch as your backend instead of PHP. Here is how:
 
+### Linking your script to a source file or component
+*(This requires PHP)*
+```bat
+@echo off
+set script=%cd%\scripts
+cd commands\html
 
+call runscript %script%\scriptfile.bat
+
+:EOF
+call ..\endfile index.php
+```
+
+#### - OR -
+
+```bat
+@echo off
+set script=%cd%\scripts
+cd commands\html
+
+call runscript-format %script%\scriptfile.bat
+
+:EOF
+call ..\endfile index.php
+```
+
+The first example will return the output of the scriptfile in HTML formatting.
+
+The second example puts the output in `<pre>` tags.
