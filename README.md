@@ -103,7 +103,7 @@ The second line closes the file. It tells the compiler that the file ended. It m
 In this example, the `index.bat` file would get compiled into the file named `index.html`.
 
 ## Using Batch as backend
-You can use Batch as your backend instead of PHP. Here is how:
+You can use Batch as your backend instead of PHP.
 
 ### Linking your script to a source file or component
 *(This requires PHP)*
