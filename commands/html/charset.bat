@@ -1,0 +1,1 @@
+echo ^<meta charset^=^"%*^"^> >>..\..\compilation.temp
