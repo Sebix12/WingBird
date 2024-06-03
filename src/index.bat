@@ -3,18 +3,33 @@ set component=%cd%\components
 set script=%cd%\scripts
 cd commands\html
 
+:: This creates a <!DOCTYPE html> tag
 call doctypehtml
 
+:: <head> part of document
+call head
 
-:: Create paragraph
-call paragraph Hello World!
+:: Add style.css to this file
+call linkcss style.css
 
-:: Call google-link component
-call %component%\google-link
+call endhead
 
-:: Run test backend script file
-call runscript %script%\test-backend.bat
+:: Body part of document
+call body
 
+call title It works!
+call subtitle Check out the useful links below to learn more!
+
+:: Link the "links" component to this file
+call %component%\links
+
+call linebreak
+
+:: Run the "currenttime" script.
+:: This will run every time the user accesses this file.
+call runscript %script%\currenttime
+
+call endbody
 
 call endhtml
 
