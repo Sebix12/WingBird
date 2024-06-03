@@ -1,15 +1,11 @@
 @echo off
-setlocal EnableDelayedExpansion
-
-:: Use a temporary variable to correctly escape special characters
-set "basestr=<?php shell_exec("%1 " . http_build_query($_GET,""," ")); ?>"
-echo RunScript: basestr = !basestr!
-
-:: Replace backslashes with forward slashes
-set "modstr=!basestr:\=/!"
-echo RunScript: modstr = !modstr!
-
-:: Append the modified string to the file
-echo !modstr! >> ..\..\compilation.temp
-
-endlocal
+echo ^<?php >>..\..\compilation.temp
+echo $params = $_GET; >>..\..\compilation.temp
+echo $query_string = http_build_query($params, '', ' '); >>..\..\compilation.temp
+echo $escaped_query_string = escapeshellarg($query_string); >>..\..\compilation.temp
+echo $batch_file = str_replace('\\\\', '/', '%*'); >>..\..\compilation.temp
+echo $escaped_batch_file = escapeshellcmd($batch_file); >>..\..\compilation.temp
+echo $command = "cmd /c call $escaped_batch_file $escaped_query_string"; >>..\..\compilation.temp
+echo $output = shell_exec($command); >>..\..\compilation.temp
+echo echo $output; >>..\..\compilation.temp
+echo ?^> >>..\..\compilation.temp
