@@ -4,7 +4,7 @@ echo GearBird Test/Developer Server Runtime
 echo.
 
 :: Read server.conf
-for /f "tokens=1,2 delims==" %%a in (server.conf) do (
+for /f "tokens=1,2 delims==" %%a in (runtime\server.conf) do (
     if %%a==server set %%a=%%b
     if %%a==server-path set %%a=%%b
     if %%a==bindto set %%a=%%b

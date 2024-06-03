@@ -17,17 +17,16 @@ goto EOF
 :compile
 echo Compiling main entry file...
 echo.
-cd runtime
-call compile-frontend.bat
+call runtime\compile-frontend.bat
 goto EOF
 
 :rundev
 echo Compiling main entry file...
 echo.
-cd runtime
-call compile-frontend.bat
+call runtime\compile-frontend.bat
 echo.
 echo Running dev server...
+call runtime\run-testserver.bat
 goto EOF
 
 
