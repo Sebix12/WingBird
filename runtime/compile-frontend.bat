@@ -21,4 +21,15 @@ for /r %%f in (%source-dir%\*.bat) do (
     call %source-dir%\%%~nxf
 )
 
+for /r "%source-dir%" %%f in (*.*) do (
+    :: Get the file extension
+    set "ext=%%~xf"
+    setlocal enabledelayedexpansion
+    if /i "!ext!" NEQ ".bat" (
+        echo Copying non-batch file %%~nxf . . .
+        copy %source-dir%\%%~nxf out\%%~nxf
+    )
+    endlocal
+)
+
 echo *** BUILD DONE ***
