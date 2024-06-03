@@ -12,6 +12,7 @@ echo Source Directory: %source-dir%
 echo.
 
 :: Prep
+if exist out rmdir out /s /q
 mkdir out
 if exist compilation.temp del compilation.temp
 
