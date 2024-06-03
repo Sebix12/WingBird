@@ -25,4 +25,4 @@ for /r %%f in (%source-dir%\*.bat) do (
     call %source-dir%\%%~nxf
 )
 
-echo *** COMPILATION DONE ***
+echo *** BUILD DONE ***

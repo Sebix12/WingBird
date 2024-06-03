@@ -93,3 +93,8 @@ The first line is a goto label named `EOF`. This can be called anywhere in this 
 The second line closes the file. It tells the compiler that the file ended. It moves the `compilation.temp` file that is created by the tags into the out directory where it gets renamed into an **endfile name**.
 
 In this example, the `index.bat` file would get compiled into the file named `index.html`.
+
+## Using Batch as backend
+If you want to use a Batch Script as a backend instead of PHP, follow the instructions below.
+
+
