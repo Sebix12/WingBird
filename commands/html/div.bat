@@ -1,0 +1,1 @@
+echo ^<div^> >>..\..\compilation.temp
