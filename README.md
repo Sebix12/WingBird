@@ -33,6 +33,8 @@ _*<sup>1</sup>: Full functionality may not be avaliable._
 
 [ ] Improve CLI functionality
 
+[ ] Ability to connect MySQL and other DBs to Script files
+
 <!-- > [!CAUTION]
 > This is just an experiment project. Please, for the love of God and all Holy, don't use this in production. Batch is not capable for large applications or even small projects. -->
 
