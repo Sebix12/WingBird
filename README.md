@@ -20,6 +20,19 @@ The beauty of Batch, is that **you can call other Batch files in a Batch file, c
 
 _*<sup>1</sup>: Full functionality may not be avaliable._
 
+## Development Checklist
+[ ] Support all 142 HTML tags
+
+[ ] Better JS, CSS and PHP support
+
+[ ] Retain src folder structure after compiling
+
+[ ] Scripts (backend files) should be able to do more
+
+[ ] Correctly pass $_GET Array into scripts
+
+[ ] Improve CLI functionality
+
 <!-- > [!CAUTION]
 > This is just an experiment project. Please, for the love of God and all Holy, don't use this in production. Batch is not capable for large applications or even small projects. -->
 
