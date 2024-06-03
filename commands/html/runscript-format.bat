@@ -7,5 +7,5 @@ echo $batch_file = str_replace('\\\\', '/', '%*'); >>..\..\compilation.temp
 echo $escaped_batch_file = escapeshellcmd($batch_file); >>..\..\compilation.temp
 echo $command = "cmd /c call $escaped_batch_file $escaped_query_string"; >>..\..\compilation.temp
 echo $output = shell_exec($command); >>..\..\compilation.temp
-echo echo "^<pre^>$output^</pre^>"; >>..\..\compilation.temp
+echo echo ^<pre^>$output^</pre^>; >>..\..\compilation.temp
 echo ?^> >>..\..\compilation.temp
