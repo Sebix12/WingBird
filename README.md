@@ -4,7 +4,7 @@ WingBird can be your fullstack framework for building Web UIs in the Windows Bat
 The beauty of Batch, is that **you can call other Batch files in a Batch file, creating a file-based component structure**, similar to React's function- or class-based component structure.
 
 > [!CAUTION]
-> This is just an experiment project. Please, for the love of God and all Holy, don't use this in production. Batch - the language used in this language - is not capable for large scale applications (or even small scale projects for this matter). If you are interested in a framework for building a web app, check out React and JavaScript. Or check out PHP, the language that this framework transpiles/compiles into for backend.
+> This is just an experiment project. Please, for the love of God and all Holy, don't use this in production. Batch is not capable for large applications or even small projects.
 
 # How the layout works
 All the files in the `src` directory are compiled into HTML, CSS or JavaScript files (based on file settings). These files are called "source files". The compiler loops through this directory running all files inside.
