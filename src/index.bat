@@ -1,6 +1,6 @@
 @echo off
 set component=%cd%\components
-set scripts=%cd%\scripts
+set script=%cd%\scripts
 cd commands\html
 
 :: Create paragraph
@@ -10,6 +10,7 @@ call paragraph Hello World!
 call %component%\google-link
 
 :: Run test backend script file
+call runscript %script%\test-backend.bat
 
 :EOF
-call ..\endfile index.html
+call ..\endfile index.php
