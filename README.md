@@ -31,7 +31,7 @@ _*<sup>1</sup>: Full functionality may not be avaliable._
 
 [ ] Correctly pass $_GET Array into scripts
 
-[ ] Improve CLI functionality
+[X] Improve CLI functionality; sebix12: Created WB-CLI Manager!
 
 [ ] Ability to connect MySQL and other DBs to Script files
 
