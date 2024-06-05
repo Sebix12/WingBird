@@ -31,7 +31,7 @@ goto EOF
 
 
 :invalidcommand
-echo Invalid command entered.
+echo Invalid command.
 goto EOF
 
 :EOF

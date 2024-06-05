@@ -4,7 +4,7 @@
 
 ::cvars
 set cli.config.n=cli.conf
-set 
+goto :cli.emulate
 ::end
 
 ::prep
@@ -23,19 +23,24 @@ goto :emulate
 ::emulation
 :cli.emulate
 set /p cli.input=">"
-goto :end
+goto :cli.run
 
 ::script running
 :cli.run
 if "%cli.input%" == "cli conf create" goto :cli.conf.create
 if "%cli.input%" == "cli conf delete" goto :cli.conf.delete
 if "%cli.input%" == "cli conf reload" goto :cli.conf.input
-goto :end
+if "%cli.input%" == "help" goto :cli.help
+call wb.bat %cli.input%
+goto :cli.emulate
 
 ::other
 :cli.conf.create
 echo set defloc=%~dp0 > %cli.config.n%
 echo set  >> %cli.config.n%
+
+:emulate
+goto :cli.emulate
 
 
 :cli.conf.delete
@@ -47,6 +52,11 @@ goto :emulate
 
 :cli.conf.input
 
-
+::built in commands
+:cli.help
+type help.dll
+echo.
+goto :cli.emulate
 
 :end
+pause
